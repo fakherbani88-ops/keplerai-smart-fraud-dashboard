@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeplerAI | Smart Fraud Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">✦ Kepler<span>AI</span></div>
+
+        <nav>
+            <a href="#home" class="active">⌂ Dashboard</a>
+            <a href="#statistics">▥ Statistics</a>
+            <a href="#transactions">⇄ Transactions</a>
+            <a href="#detector">◈ Fraud Detector</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Smart Fraud Detection</p>
+            <small>Version 1.0</small>
+        </div>
+    </aside>
+
+    <main class="main-content" id="home">
+
+        <header class="topbar">
+            <div>
+                <h1>Fraud Detection Dashboard</h1>
+                <p>Welcome to KeplerAI monitoring system</p>
+            </div>
+            <div class="profile">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+        </header>
+
+        <section class="welcome">
+            <div>
+                <h2>Welcome to KeplerAI</h2>
+                <p>Monitor transactions and detect suspicious financial activities using AI.</p>
+            </div>
+            <a href="#detector" class="primary-btn">Start Detection →</a>
+        </section>
+
+        <section class="stats-grid" id="statistics">
+            <div class="stat-card">
+                <p>Total Transactions</p>
+                <h2 id="totalTransactions">12,450</h2>
+                <span>Overall monitored</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Fraud Detected</p>
+                <h2 class="red" id="fraudCount">248</h2>
+                <span>Suspicious transactions</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Legitimate Transactions</p>
+                <h2 class="green" id="legitimateCount">12,202</h2>
+                <span>Successfully monitored</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Detection Rate</p>
+                <h2 id="detectionRate">98.01%</h2>
+                <span>Illustrative model metric</span>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="panel">
+                <h3>Transaction Overview</h3>
+                <p class="muted">Transactions during the last 7 days</p>
+                <canvas id="transactionChart"></canvas>
+            </div>
+
+            <div class="panel">
+                <h3>Transaction Distribution</h3>
+                <p class="muted">Illustrative distribution</p>
+                <div class="donut-area">
+                    <div class="donut">
+                        <div>
+                            <strong>98%</strong>
+                            <small>Legitimate</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="legend">
+                    <span><i class="green-bg"></i> Legitimate</span>
+                    <span><i class="red-bg"></i> Fraudulent</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel transactions" id="transactions">
+            <div class="section-heading">
+                <div>
+                    <h3>Recent Transactions</h3>
+                    <p class="muted">Latest monitored operations</p>
+                </div>
+                <span class="tag">Live demo</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Amount</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionTable">
+                        <tr>
+                            <td>#TR001</td>
+                            <td>250 DT</td>
+                            <td>Payment</td>
+                            <td><span class="badge success">Legitimate</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TR002</td>
+                            <td>8,500 DT</td>
+                            <td>Transfer</td>
+                            <td><span class="badge danger">Fraud</span></td>
+                        </tr>
+                        <tr>
+                            <td>#TR003</td>
+                            <td>120 DT</td>
+                            <td>Purchase</td>
+                            <td><span class="badge success">Legitimate</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel detector" id="detector">
+            <h3>AI Fraud Detection Simulator</h3>
+            <p class="muted">Enter transaction information to simulate fraud detection.</p>
+
+            <form id="fraudForm">
+                <div class="form-grid">
+                    <div>
+                        <label>Transaction Amount (DT)</label>
+                        <input type="number" id="amount" min="0" step="0.01" placeholder="Example: 500" required>
+                    </div>
+
+                    <div>
+                        <label>Old Balance (DT)</label>
+                        <input type="number" id="oldBalance" min="0" step="0.01" placeholder="Example: 5000" required>
+                    </div>
+
+                    <div>
+                        <label>New Balance (DT)</label>
+                        <input type="number" id="newBalance" min="0" step="0.01" placeholder="Example: 4500" required>
+                    </div>
+
+                    <div>
+                        <label>Transaction Category</label>
+                        <select id="category" required>
+                            <option value="0">Payment</option>
+                            <option value="1">Transfer</option>
+                            <option value="2">Cash Out</option>
+                            <option value="3">Debit</option>
+                            <option value="4">Cash In</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn">Analyze Transaction</button>
+            </form>
+
+            <div id="result" class="result hidden"></div>
+        </section>
+
+        <footer>
+            © 2026 KeplerAI | Smart Fraud Detection System
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
