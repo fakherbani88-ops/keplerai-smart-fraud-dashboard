@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -14,10 +14,16 @@
     <header>
         <h1>KeplerAI</h1>
         <h2>Smart Fraud Detection Dashboard</h2>
+
         <p>
             Une application intelligente pour détecter
             les transactions bancaires frauduleuses grâce à l'IA.
         </p>
+
+        <!-- Bouton d'accès au Dashboard -->
+        <a href="#dashboard" class="dashboard-btn">
+            Accéder au Dashboard →
+        </a>
     </header>
 
     <main>
@@ -45,8 +51,10 @@
             </ul>
         </section>
 
-        <section class="application">
-            <h2>Fraud Detection</h2>
+        <!-- Dashboard -->
+        <section class="application" id="dashboard">
+            <h2>Smart Fraud Detection</h2>
+            <p>Analysez une transaction bancaire pour détecter une fraude.</p>
 
             <form action="/predict" method="POST">
 
